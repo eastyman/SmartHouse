@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CoolHouse.Device">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAIA=</HashCode>
+      <FileName>ParentClasses\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CoolHouse.Fringe">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="CoolHouse.TempereaturedDevice" FixedToPoint="true">
+      <Path>
+        <Point X="1.75" Y="1.191" />
+        <Point X="1.75" Y="2.375" />
+        <Point X="2.5" Y="2.375" />
+        <Point X="2.5" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\Fringe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolHouse.TVSet">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Devices\TVSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SignalSource" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CoolHouse.MicroWave">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\MicroWave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolHouse.Oven">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\Oven.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolHouse.TempereaturedDevice" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ParentClasses\TempereaturedDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CoolHouse.GameBox">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="CoolHouse.Device" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="2.891" />
+        <Point X="7.5" Y="3.562" />
+        <Point X="12.25" Y="3.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\GameBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CoolHouse.Satellite">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <InheritanceLine Type="CoolHouse.Device" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="2.891" />
+        <Point X="7.5" Y="3.562" />
+        <Point X="11" Y="3.562" />
+        <Point X="11" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\Satellite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CoolHouse.iSwitchable">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIA=</HashCode>
+      <FileName>Interfaces\iSwitchable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CoolHouse.iTemperatured">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Interfaces\iTemperatured.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CoolHouse.iTVsourced">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\iTVsourced.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
