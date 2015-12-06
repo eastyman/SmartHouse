@@ -5,9 +5,11 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public interface iTemperatured
+    public interface ITemperatured
     {
         int Temperature { get; set; }
+        void highTemperature(int offset);
+        void lowTemperature(int offest);     
 
     }
 }

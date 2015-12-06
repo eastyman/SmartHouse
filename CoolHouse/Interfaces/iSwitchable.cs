@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public interface iSwitchable
+    public interface ISwitchable
     {
          bool State { get; set; }
          void On();

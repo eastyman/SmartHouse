@@ -7,16 +7,66 @@ namespace CoolHouse
 {
     public class TVSet:Device
     {
-        public iTVsourced SignalSource { get; set; }  //Свойство для инъекции зависимости (подключение к телевизору внешнего устройства)
+        public ITVsourced SignalSource { get; set; }  //Свойство для инъекции зависимости (подключение к телевизору внешнего устройства)
         public int currChannel;
-        public TVSet(string devname, int channel):base(devname)
+        public readonly int channelsCount;
+        public TVSet(string devname):base(devname)
         {
             name = devname;
-            currChannel = channel;
+            currChannel = 0;
+            SignalSource = null;
+            channelsCount = 500;
+
         }
-        public void TranslateVideo()
+
+        public void prevChannel()
         {
-            SignalSource.StreamToTV();
+            if (currChannel - 1 < 0)
+            {
+                currChannel = channelsCount;
+            }
+            else
+            {
+                currChannel -= 1;
+            }            
+        }
+
+        public void nextChannel()
+        {
+            if (currChannel + 1 > channelsCount)
+            {
+                currChannel = 0;
+            }
+            else
+            {
+                currChannel += 1;
+            }
+        }
+
+        public string ReturnVideoSource()
+        {
+            if (SignalSource == null)
+            {
+                return "зомбоящик, канал: "+currChannel;
+            }
+            else
+            {
+                return SignalSource.Identify();
+            }
+        }
+
+        public override string ToString()
+        {
+            string retStr = "";
+            if (State)
+            {
+                retStr = "включен";
+            }
+            if (!State)
+            {
+                retStr = "выключен";
+            }
+            return "Телевизор " + name + " " + retStr + " источник сигнала " + this.ReturnVideoSource();
         }
     }
 }

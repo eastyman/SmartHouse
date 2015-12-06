@@ -5,15 +5,15 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class Satellite:Device, iTVsourced
+    public class Satellite:Device, ITVsourced
     {
         public Satellite(string name):base(name)
         {
             this.name = name;
         }
-        public void StreamToTV()
+        public string Identify()
         {
-            //some code to view video
+            return "Спутниковый тюнер "+this.ToString();    
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class Device:iSwitchable
+    public class Device:ISwitchable
     {
-        protected string name;
+        public string name;
         public bool State { get; set; }
         public Device(string name)
         {
@@ -21,6 +21,19 @@ namespace CoolHouse
         public virtual void Off()
         {
             State = false;
+        }
+        public override string ToString()
+        {
+            string retStr = "";
+            if (State)
+            {
+                retStr = "вкл.";
+            }
+            if (!State)
+            {
+                retStr = "выкл.";
+            }
+            return name + " " + retStr;
         }
 
     }

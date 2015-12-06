@@ -5,15 +5,15 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class GameBox :Device, iTVsourced
+    public class GameBox :Device, ITVsourced
     {
         public GameBox(string name):base(name)
         {
             this.name = name;
         }
-        public void StreamToTV()
+        public string Identify()
         {
-            //some code to view video
+            return "GameBox "+ this.ToString();
         }
     }
 }
