@@ -9,36 +9,68 @@ namespace CoolHouse
     {
         protected  int minTemperature;
         protected  int maxTemperature;
+        protected  bool door;
+        protected  bool tempElement;
         public TempereaturedDevice(string name) : base(name)
         {
             this.name = name;
+            door = false;            
         }
         public int Temperature { get; set; }
+       
         public void lowTemperature(int offset)
         {
-            if (Temperature - offset > minTemperature)
+            if (Temperature - offset >= minTemperature)
             {
-                Temperature -= offset;
+                Temperature = Temperature - offset;
             }
+            else
+            {
+                Temperature = minTemperature;
+            }
+
             
         }
         public void highTemperature(int offset)
         {
-            if (Temperature + offset < maxTemperature)
+            if (Temperature + offset <= maxTemperature)
             {
-                Temperature += offset;
+                Temperature = Temperature + offset;
             }
-
+            else
+            {
+                Temperature = maxTemperature;
+            }
         }
-
+  
         public virtual void OpenDoor()
         {
-            State = false;
+            tempElement = false;
+            door = true;
         }
 
         public virtual void CloseDoor()
         {
-            State = true;
+            if (State) 
+            { 
+                tempElement = true;
+            }
+            
+            door = false;
+        }
+
+        public override void On()
+        {
+            base.On();
+            if (!door) 
+            {
+                tempElement = true;
+            }          
+        }
+        public override void Off()
+        {
+            base.Off();
+            tempElement = false;
         }
 
     }

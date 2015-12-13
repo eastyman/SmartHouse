@@ -25,7 +25,27 @@ namespace CoolHouse
             {
                 retStr = "выключена";
             }
-            return "Духовка " + name + " " + retStr;
+            
+            string doorState = "";
+            if (door)
+            {
+                doorState = "открыта";
+            }
+            if (!door)
+            {
+                doorState = "закрыта";
+            }
+
+            string tempElem = "";
+            if (tempElement)
+            {
+                tempElem = "включено";
+            }
+            if (!tempElement)
+            {
+                tempElem = "выключено";
+            }
+            return "Духовка " + name + " " + retStr +" температура: " + Temperature +  ", дверь " + doorState + ", нагревание " + tempElem;
         }
     }
 }

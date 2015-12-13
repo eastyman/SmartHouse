@@ -39,7 +39,27 @@ namespace CoolHouse
             {
                 retStr = "выключена";
             }
-            return "Микроволновка " + name + " " + retStr + " в режиме " + this.ReturnMode() + "Температура: " + Temperature;
+
+            string doorState = "";
+            if (door)
+            {
+                doorState = "открыта";
+            }
+            if (!door)
+            {
+                doorState = "закрыта";
+            }
+
+            string tempElem = "";
+            if (tempElement)
+            {
+                tempElem = "включено";
+            }
+            if (!tempElement)
+            {
+                tempElem = "выключено";
+            }
+            return "Микроволновка " + name + " " + retStr + " в режиме " + this.ReturnMode() + " температура: " + Temperature + ", дверь " + doorState + ", нагревание " + tempElem;
         }
 
     }

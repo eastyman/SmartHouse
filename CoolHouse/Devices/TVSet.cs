@@ -66,7 +66,7 @@ namespace CoolHouse
             {
                 retStr = "выключен";
             }
-            return "Телевизор " + name + " " + retStr + " источник сигнала " + this.ReturnVideoSource();
+            return "Телевизор " + name + " " + retStr + " источник сигнала: " + this.ReturnVideoSource();
         }
     }
 }

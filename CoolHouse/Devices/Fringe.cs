@@ -16,14 +16,38 @@ namespace CoolHouse
             lamp = new Device("Light");
         }
 
+        public override void On()
+        {
+            State = true;            
+            if (door)
+            {
+                
+                lamp.On();
+            }
+            tempElement = true;
+        }
+
+        public override void Off()
+        {
+            base.Off();
+            lamp.Off();
+        }
+
+       
+
         public override void OpenDoor()
         {
-            lamp.On();
+            if (State)
+            {
+                lamp.On();
+            }            
+            door = true;
         }
 
         public override void CloseDoor()
         {
             lamp.Off();
+            door = false;
         }
 
         public override string ToString()
@@ -37,7 +61,16 @@ namespace CoolHouse
             {
                 retStr = "выключен";
             }
-            return "Холодильник " + name + " " + retStr+" температура "+Temperature+" лампочка "+lamp.ToString();
+            string doorState = "";
+            if (door)
+            {
+                doorState = "открыта";
+            }
+            if (!door)
+            {
+                doorState = "закрыта";
+            }
+            return "Холодильник " + name + " " + retStr + " температура: " + Temperature + " лампочка " + lamp.ToString() + " Дверь " + doorState;
         }
     }
 }
