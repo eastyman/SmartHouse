@@ -7,13 +7,10 @@ namespace CoolHouse
 {
     public class Fringe : TempereaturedDevice
     {
-        Device lamp;
-        public Fringe(string name) : base(name)
+        public Device Lamp { get; set; }   
+        public Fringe(string name, int minT, int maxT): base(name, minT, maxT)
         {
             this.name = name;
-            minTemperature = -20;
-            maxTemperature = 5;
-            lamp = new Device("Light");
         }
 
         public override void On()
@@ -22,7 +19,7 @@ namespace CoolHouse
             if (door)
             {
                 
-                lamp.On();
+                Lamp.On();
             }
             tempElement = true;
         }
@@ -30,7 +27,7 @@ namespace CoolHouse
         public override void Off()
         {
             base.Off();
-            lamp.Off();
+            Lamp.Off();
         }
 
        
@@ -39,14 +36,14 @@ namespace CoolHouse
         {
             if (State)
             {
-                lamp.On();
+                Lamp.On();
             }            
             door = true;
         }
 
         public override void CloseDoor()
         {
-            lamp.Off();
+            Lamp.Off();
             door = false;
         }
 
@@ -70,7 +67,7 @@ namespace CoolHouse
             {
                 doorState = "закрыта";
             }
-            return "Холодильник " + name + " " + retStr + " температура: " + Temperature + " лампочка " + lamp.ToString() + " Дверь " + doorState;
+            return "Холодильник " + name + " " + retStr + " температура: " + Temperature + " лампочка " + Lamp.ToString() + " Дверь " + doorState;
         }
     }
 }

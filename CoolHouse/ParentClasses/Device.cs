@@ -5,14 +5,13 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class Device:ISwitchable
+    public class Device
     {
         public string name;
         public bool State { get; set; }
         public Device(string name)
         {
             this.name = name;
-            State = false;
         }
         public virtual void On()
         {

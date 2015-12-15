@@ -5,16 +5,18 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class TempereaturedDevice:Device, ITemperatured
+    public class TempereaturedDevice:Device
     {
         protected  int minTemperature;
         protected  int maxTemperature;
         protected  bool door;
         protected  bool tempElement;
-        public TempereaturedDevice(string name) : base(name)
+        public TempereaturedDevice(string name, int minT, int maxT) : base(name)
         {
             this.name = name;
-            door = false;            
+            door = false;
+            minTemperature = minT;
+            maxTemperature = maxT;
         }
         public int Temperature { get; set; }
        

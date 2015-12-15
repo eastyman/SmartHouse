@@ -45,8 +45,6 @@
     <Compile Include="ParentClasses\Device.cs" />
     <Compile Include="Devices\Fringe.cs" />
     <Compile Include="Devices\GameBox.cs" />
-    <Compile Include="Interfaces\iSwitchable.cs" />
-    <Compile Include="Interfaces\iTemperatured.cs" />
     <Compile Include="Interfaces\iTVsourced.cs" />
     <Compile Include="Devices\MicroWave.cs" />
     <Compile Include="Devices\Oven.cs" />

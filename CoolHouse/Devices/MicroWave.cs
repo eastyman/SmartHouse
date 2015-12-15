@@ -9,11 +9,10 @@ namespace CoolHouse
     public class MicroWave : TempereaturedDevice
     {
       
-        public MicroWave(string name) : base(name)
+        public MicroWave(string name, int minT, int maxT) : base(name, minT, maxT)
         {
             this.name = name;
-            minTemperature = 50;
-            maxTemperature = 250;
+            
         }
 
         public MWmodes ReturnMode()

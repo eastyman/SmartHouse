@@ -38,16 +38,18 @@ namespace CoolHouse
                             switch (commands[1].ToLower())
                             {
                                 case "fringe":
-                                    devDictionary.Add(commands[2], new Fringe(commands[2]));
+                                    devDictionary.Add(commands[2], new Fringe(commands[2],-20,5));
+                                    Device lamp = new Device("FringeLamp");
+                                    ((Fringe)devDictionary[commands[2]]).Lamp = lamp;
                                     break;
                                 case "tvset":
                                     devDictionary.Add(commands[2], new TVSet(commands[2]));
                                     break;
                                 case "oven":
-                                    devDictionary.Add(commands[2], new Oven(commands[2]));
+                                    devDictionary.Add(commands[2], new Oven(commands[2], 100, 300));
                                     break;
                                 case "microwave":
-                                    devDictionary.Add(commands[2], new MicroWave(commands[2]));
+                                    devDictionary.Add(commands[2], new MicroWave(commands[2], 50, 250));
                                     break;
                                 case "gamebox":
                                     devDictionary.Add(commands[2], new GameBox(commands[2]));

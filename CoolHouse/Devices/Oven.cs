@@ -7,11 +7,9 @@ namespace CoolHouse
 {
     public class Oven : TempereaturedDevice
     {
-        public Oven(string name) : base(name)
+        public Oven(string name, int minT, int maxT): base(name, minT, maxT)
         {
-            this.name = name;
-            minTemperature = 100;
-            maxTemperature = 300;
+            this.name = name;  
         }
 
         public override string ToString()
