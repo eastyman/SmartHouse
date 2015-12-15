@@ -43,7 +43,7 @@ namespace CoolHouse
                                     ((Fringe)devDictionary[commands[2]]).Lamp = lamp;
                                     break;
                                 case "tvset":
-                                    devDictionary.Add(commands[2], new TVSet(commands[2]));
+                                    devDictionary.Add(commands[2], new TVSet(commands[2],0,500));
                                     break;
                                 case "oven":
                                     devDictionary.Add(commands[2], new Oven(commands[2], 100, 300));
