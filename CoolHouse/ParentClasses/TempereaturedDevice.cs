@@ -5,13 +5,14 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class TempereaturedDevice:Device
+    public class TempereaturedDevice : Device
     {
-        protected  int minTemperature;
-        protected  int maxTemperature;
-        protected  bool door;
-        protected  bool tempElement;
-        public TempereaturedDevice(string name, int minT, int maxT) : base(name)
+        protected int minTemperature;
+        protected int maxTemperature;
+        protected bool door;
+        protected bool tempElement;
+        public TempereaturedDevice(string name, int minT, int maxT)
+            : base(name)
         {
             this.name = name;
             door = false;
@@ -19,7 +20,7 @@ namespace CoolHouse
             maxTemperature = maxT;
         }
         public int Temperature { get; set; }
-       
+
         public void lowTemperature(int offset)
         {
             if (Temperature - offset >= minTemperature)
@@ -31,7 +32,7 @@ namespace CoolHouse
                 Temperature = minTemperature;
             }
 
-            
+
         }
         public void highTemperature(int offset)
         {
@@ -44,7 +45,7 @@ namespace CoolHouse
                 Temperature = maxTemperature;
             }
         }
-  
+
         public virtual void OpenDoor()
         {
             tempElement = false;
@@ -53,21 +54,21 @@ namespace CoolHouse
 
         public virtual void CloseDoor()
         {
-            if (State) 
-            { 
+            if (State)
+            {
                 tempElement = true;
             }
-            
+
             door = false;
         }
 
         public override void On()
         {
             base.On();
-            if (!door) 
+            if (!door)
             {
                 tempElement = true;
-            }          
+            }
         }
         public override void Off()
         {

@@ -5,15 +5,16 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class Satellite:Device, ITVsourced
+    public class Satellite : Device, ITVsourced
     {
-        public Satellite(string name):base(name)
+        public Satellite(string name)
+            : base(name)
         {
             this.name = name;
         }
         public string Identify()
         {
-            return "Спутниковый тюнер "+this.ToString();    
+            return "Спутниковый тюнер " + this.ToString();
         }
     }
 }

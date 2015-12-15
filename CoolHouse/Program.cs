@@ -10,15 +10,15 @@ namespace CoolHouse
     {
         static void Main(string[] args)
         {
-     
+
             IDictionary<string, Device> devDictionary = new Dictionary<string, Device>();
- 
+
             while (true)
             {
                 Console.Clear();
                 foreach (var dev in devDictionary)
                 {
-                   Console.WriteLine("Название: " + dev.Value.ToString());
+                    Console.WriteLine("Название: " + dev.Value.ToString());
                 }
                 Console.WriteLine();
                 Console.Write("Введите команду: ");
@@ -38,12 +38,12 @@ namespace CoolHouse
                             switch (commands[1].ToLower())
                             {
                                 case "fringe":
-                                    devDictionary.Add(commands[2], new Fringe(commands[2],-20,5));
+                                    devDictionary.Add(commands[2], new Fringe(commands[2], -20, 5));
                                     Device lamp = new Device("FringeLamp");
                                     ((Fringe)devDictionary[commands[2]]).Lamp = lamp;
                                     break;
                                 case "tvset":
-                                    devDictionary.Add(commands[2], new TVSet(commands[2],0,500));
+                                    devDictionary.Add(commands[2], new TVSet(commands[2], 0, 500));
                                     break;
                                 case "oven":
                                     devDictionary.Add(commands[2], new Oven(commands[2], 100, 300));
@@ -71,7 +71,7 @@ namespace CoolHouse
                         Help();
                         continue;
                     }
-                    continue;                    
+                    continue;
                 }
                 if (commands[0].ToLower() == "add" && devDictionary.ContainsKey(commands[2]))
                 {
@@ -80,7 +80,7 @@ namespace CoolHouse
                     Console.ReadLine();
                     continue;
                 }
-       
+
                 switch (commands[0].ToLower())
                 {
                     case "del":
@@ -130,7 +130,7 @@ namespace CoolHouse
                             Console.WriteLine("Устройство с таким названием не найдено");
                             Console.ReadLine();
                         }
-                        break; 
+                        break;
                     case "nextchannel":
                         if (commands.Length != 2)
                         {
@@ -141,9 +141,9 @@ namespace CoolHouse
                         {
                             if (devDictionary[commands[1]] is TVSet)
                             {
-                               
+
                                 ((TVSet)devDictionary[commands[1]]).nextChannel();
-                                
+
                             }
                             else
                             {
@@ -168,7 +168,7 @@ namespace CoolHouse
                             {
 
                                 ((TVSet)devDictionary[commands[1]]).prevChannel();
-                                
+
                             }
                             else
                             {
@@ -193,7 +193,7 @@ namespace CoolHouse
                             {
 
                                 ((TVSet)devDictionary[commands[1]]).SignalSource = ((ITVsourced)devDictionary[commands[2]]);
-                               
+
                             }
                             else
                             {
@@ -309,8 +309,8 @@ namespace CoolHouse
                                 {
                                     Console.WriteLine("Температура введена неправльно");
                                     Console.ReadLine();
-                                }                                                
-                                
+                                }
+
 
                             }
                             else
@@ -362,7 +362,7 @@ namespace CoolHouse
                             Console.ReadLine();
                         }
                         break;
-                   
+
 
                     default:
                         Help();
@@ -402,7 +402,7 @@ namespace CoolHouse
             Console.WriteLine("\topen devName");
             Console.WriteLine("\tclose devName");
             Console.WriteLine("\tuptemp devName degrees ");
-            Console.WriteLine("\tdowntemp devName degrees");              
+            Console.WriteLine("\tdowntemp devName degrees");
             Console.WriteLine("Нажмите любую клавишу для продолжения");
             Console.ReadLine();
         }

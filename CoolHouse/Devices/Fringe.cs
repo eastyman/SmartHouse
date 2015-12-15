@@ -7,18 +7,19 @@ namespace CoolHouse
 {
     public class Fringe : TempereaturedDevice
     {
-        public Device Lamp { get; set; }   
-        public Fringe(string name, int minT, int maxT): base(name, minT, maxT)
+        public Device Lamp { get; set; }
+        public Fringe(string name, int minT, int maxT)
+            : base(name, minT, maxT)
         {
             this.name = name;
         }
 
         public override void On()
         {
-            State = true;            
+            State = true;
             if (door)
             {
-                
+
                 Lamp.On();
             }
             tempElement = true;
@@ -30,14 +31,14 @@ namespace CoolHouse
             Lamp.Off();
         }
 
-       
+
 
         public override void OpenDoor()
         {
             if (State)
             {
                 Lamp.On();
-            }            
+            }
             door = true;
         }
 

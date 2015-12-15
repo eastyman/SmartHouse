@@ -5,15 +5,16 @@ using System.Text;
 
 namespace CoolHouse
 {
-    public class TVSet:Device
+    public class TVSet : Device
     {
         public ITVsourced SignalSource { get; set; }  //Свойство для инъекции зависимости (подключение к телевизору внешнего устройства)
         public int currChannel;
         public readonly int channelsCount;
-        public TVSet(string devname, int currCh, int chCount):base(devname)
+        public TVSet(string devname, int currCh, int chCount)
+            : base(devname)
         {
             name = devname;
-            currChannel = currCh;            
+            currChannel = currCh;
             channelsCount = chCount;
         }
 
@@ -26,7 +27,7 @@ namespace CoolHouse
             else
             {
                 currChannel -= 1;
-            }            
+            }
         }
 
         public void nextChannel()
@@ -45,7 +46,7 @@ namespace CoolHouse
         {
             if (SignalSource == null)
             {
-                return "зомбоящик, канал: "+currChannel;
+                return "зомбоящик, канал: " + currChannel;
             }
             else
             {

@@ -7,14 +7,15 @@ namespace CoolHouse
 {
     public class Oven : TempereaturedDevice
     {
-        public Oven(string name, int minT, int maxT): base(name, minT, maxT)
+        public Oven(string name, int minT, int maxT)
+            : base(name, minT, maxT)
         {
-            this.name = name;  
+            this.name = name;
         }
 
         public override string ToString()
         {
-            string retStr="";
+            string retStr = "";
             if (State)
             {
                 retStr = "включена";
@@ -23,7 +24,7 @@ namespace CoolHouse
             {
                 retStr = "выключена";
             }
-            
+
             string doorState = "";
             if (door)
             {
@@ -43,7 +44,7 @@ namespace CoolHouse
             {
                 tempElem = "выключено";
             }
-            return "Духовка " + name + " " + retStr +" температура: " + Temperature +  ", дверь " + doorState + ", нагревание " + tempElem;
+            return "Духовка " + name + " " + retStr + " температура: " + Temperature + ", дверь " + doorState + ", нагревание " + tempElem;
         }
     }
 }
